@@ -1,10 +1,20 @@
+<%= image_tag 'top-image.jpg', class: 'top-image'%>
 <div class="container">
     <div class="row">
-        <% @articles.each do |article| %>
-            <div class="col-md-3">
-                <%= article.title %>
-                <%= article.created_at.strftime('%Y年%m月%d日 %H:%M') %>
-            </div>
-        <% end %>
+        <%= link_to '新規作成', new_article_path, class: 'btn btn-primary margin-10px' %>
+    </div>
+    <div class="row">
+        <div class="col-md-7 articles-area bg-color-white margin-lr-10px">
+            <% @articles.each do |article| %>
+                <%= link_to article do %>
+                    <h3><%= article.title %></h3>
+                    <p><%= article.created_at.strftime('%Y年%m月%d日 %H:%M') %></p>
+                    <%= image_tag 'dummy.jpg', class: 'img-responsive'%>
+                <% end %>
+            <% end %>
+        </div>
+        <div class="col-md-4 archive-area bg-color-white margin-10px">
+            <h4>アーカイブ</h4>
+        </div>
     </div>
 </div>
