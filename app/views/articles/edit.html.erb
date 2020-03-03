@@ -1,2 +1,17 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<%= image_tag 'top-image.jpg', class: 'top-image'%>
+<div class="container">
+    <div class="article bg-color-white margin-lr-10px padding-lr-15px">
+        <h1 class="text-center padding-top-10px">編集</h1>
+        <%= form_for @article do |f| %>
+            <div class="form_group">
+                <%= f.label :title, 'タイトル', class: 'padding-top-10px' %>
+                <%= f.text_field :title, class: 'form-control' %>
+            </div>
+            <div class="form_group">
+                <%= f.label :body, '本文', class: 'padding-top-10px' %>
+                <%= f.text_area :body,  rows: 10, class: 'form-control' %>
+            </div>
+            <%= f.submit '編集する', class: 'btn btn-primary margin-tb-20px'%>
+        <% end %>
+    </div>
+</div>

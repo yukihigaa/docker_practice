@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-light nav-menu">
+      <%= link_to 'HOME', articles_path, class: 'navbar-brand color-white' %>
+    </nav>
     <%= yield %>
   </body>
 </html>

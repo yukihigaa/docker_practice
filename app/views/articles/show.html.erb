@@ -1,8 +1,12 @@
 <%= image_tag 'top-image.jpg', class: 'top-image'%>
 <div class="container">
     <div class="article bg-color-white margin-lr-10px padding-lr-15px">
-        <h1><%= @article.title %></h1>
-        <p class="text-right"><%= @article.created_at.strftime('%Y年%m月%d日 %H:%M') %></p>
-        <p><%= @article.body %></p>
+        <div class="">
+            <h1><%= @article.title %></h1>
+            <p class="text-right"><%= @article.created_at.strftime('%Y年%m月%d日 %H:%M') %></p>
+            <p><%= @article.body %></p>
+        </div>
     </div>
+    <%= link_to '編集', edit_article_path(@article), class: 'btn btn-primary margin-10px' %>
+    <%= link_to '削除', article_path(@article), method: :delete, class: 'btn btn-danger margin-10px' %>
 </div>

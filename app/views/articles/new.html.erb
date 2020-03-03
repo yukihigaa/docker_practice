@@ -9,9 +9,9 @@
             </div>
             <div class="form_group">
                 <%= f.label :body, '本文', class: 'padding-top-10px' %>
-                <%= f.text_area :body, class: 'form-control' %>
+                <%= f.text_area :body, rows: 10, class: 'form-control' %>
             </div>
-            <%= f.submit '新規作成', rows: 10, class: 'btn btn-primary margin-tb-20px'%>
+            <%= f.submit '新規作成', class: 'btn btn-primary margin-tb-20px'%>
         <% end %>
     </div>
 </div>
